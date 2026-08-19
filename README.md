@@ -54,15 +54,28 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 
 ## 🖼 Screenshots
 
-Save your screenshots into the [`screenshots/`](screenshots/) folder. Suggested naming:
+## 🖼 Screenshots
 
-- `00_vbox_vms.png` — Kali + Ubuntu VM setup in VirtualBox
-- `01_hydra_attack.png` — Hydra brute-force run against target
-- `02_collector_setup.png` — Sumo Logic Collector install on Ubuntu
-- `03_source_config.png` — Log source config (`linux/auth`, `linux/syslog`)
-- `04_monitor_ssh_bruteforce.png` — SSH Brute Force Monitor config
-- `05_alert_email.png` — Triggered alert email
-- `06_correlation.png` — Manual src_ip correlation across alerts
+**Lab setup — both VMs running in VirtualBox**
+![VirtualBox VMs](screenshots/00_vbox_vms.png)
+
+**Hydra SSH brute-force attack in progress from Kali**
+![Hydra attack](screenshots/01_hydra_attack.png)
+
+**Sumo Logic Collector configured to ingest linux/auth and linux/syslog**
+![Collector setup](screenshots/02_collector_setup.png)
+
+**Parsed search results — failed login attempts correctly extracted into `src_ip` and `src_port` fields**
+![Search results](screenshots/03_search_results.png)
+
+**SSH Brute Force Monitor configuration — threshold, evaluation window, and recovery settings**
+![Monitor config](screenshots/04_monitor_configs.png)
+
+**All three monitors in Critical state during the live attack**
+![Monitors dashboard](screenshots/05_monitors_dashboard_critical.png)
+
+**Stale alert investigation — a Successful SSH Login alert stayed open for over a day despite correct recovery settings, and required manual resolution. See [docs/detection-rules.md](docs/detection-rules.md) for the full writeup.**
+![Stale alert resolved](screenshots/06_stale_alert_resolved.png)
 
 ---
 
