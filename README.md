@@ -1,4 +1,4 @@
-# 🔐 SOC101 Home Lab — SIEM Detection Engineering (Sumo Logic)
+# 🔐 SIEM Detection Engineering (Sumo Logic)
 
 This repository documents a home lab for building an end-to-end **SIEM detection pipeline** using:
 
