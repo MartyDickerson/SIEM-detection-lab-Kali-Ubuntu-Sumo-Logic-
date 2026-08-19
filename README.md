@@ -54,8 +54,6 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 
 ## 🖼 Screenshots
 
-## 🖼 Screenshots
-
 **Lab setup — both VMs running in VirtualBox**
 ![VirtualBox VMs](screenshots/00_vbox_vms.png)
 
