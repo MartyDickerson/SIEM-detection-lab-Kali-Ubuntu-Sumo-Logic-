@@ -1,4 +1,4 @@
-# 🔐 SIEM Detection Engineering (Sumo Logic)
+# Linux SOC Detection Suite
 
 This repository documents a home lab for building an end-to-end **SIEM detection pipeline** using:
 
@@ -61,13 +61,10 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 **Hydra SSH brute-force attack in progress from Kali**
 ![Hydra attack](screenshots/01_hydra_attack.png)
 
-**Detection dashboard — SSH brute-force attack visualized in Sumo Logic**
+**Linux SOC Detection Suite — SSH brute-force attack visualized in Sumo Logic**
 ![SSH Brute Force Detection Dashboard](screenshots/03_dashboard_bruteforce.png)
 
-Dashboard combining 5 panels: failed login volume over time, top attacker 
-attribution by src_ip, successful vs. failed login ratio, sudo command audit 
-trail, and log activity by process — built to visualize the SSH Brute Force 
-Monitor's detection logic end-to-end.
+**Linux SOC Detection Suite dashboard — full attack chain from brute force to persistence**
 
 **Sumo Logic Collector configured to ingest linux/auth and linux/syslog**
 ![Collector setup](screenshots/02_collector_setup.png)
