@@ -38,7 +38,8 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 | 1 | SSH Brute Force | Failed password count from same src IP exceeds threshold within 5-min window | T1110 | ✅ Live & validated |
 | 2 | Unknown Username Login Attempt | Any `Invalid user` event | T1110.001 | ✅ Live & validated |
 | 3 | Successful SSH Login | Any `Accepted password` event | — | ✅ Live & validated |
-| 4 | Sudo / Privilege Escalation Watch | `sudo` command execution pattern | T1548.003 | 🚧 In progress |
+| 4 | Sudo / Privilege Escalation Watch | Watchlist command (useradd/usermod/passwd/etc.) via `sudo`, count > 0 within 5-min window (Critical) | T1548.003 | ✅ Live & validated |
+| 5 | SSH Public Key Authentication Watch | `pubkey_auth_count > 0` within 5-min window (Critical) | T1098.004 | ✅ Live & validated |
 
 ---
 
