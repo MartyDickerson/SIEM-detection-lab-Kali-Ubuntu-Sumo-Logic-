@@ -25,7 +25,8 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
  │   ├─ SSH Brute Force Monitor
  │   ├─ Unknown Username Login Attempt
  │   ├─ Successful SSH Login
- │   └─ Sudo / Privilege Escalation Watch (in progress)
+  │ ├─ Sudo / Privilege Escalation Watch
+  │ └─ SSH Public Key Authentication Watch
  └─ Alert emails ──► manual correlation by src_ip
 ```
 
