@@ -14,20 +14,20 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 
 ```
 [ Kali Linux VM — 192.168.1.5 ]
- └─ Hydra (SSH brute force) ──────────► attack traffic
+└─ Hydra (SSH brute force) ──────────► attack traffic
 
 [ Ubuntu 24.04 VM — SOC101-ubuntu, 192.168.1.4 ]
- ├─ /var/log/auth.log ──► Sumo Logic Collector ──► linux/auth
- └─ /var/log/syslog   ──► Sumo Logic Collector ──► linux/syslog
+├─ /var/log/auth.log ──► Sumo Logic Collector ──► linux/auth
+└─ /var/log/syslog ──► Sumo Logic Collector ──► linux/syslog
 
 [ Sumo Logic (trial, core logging tier) ]
- ├─ Monitors (Logs type, Static threshold)
- │   ├─ SSH Brute Force Monitor
- │   ├─ Unknown Username Login Attempt
- │   ├─ Successful SSH Login
-  │ ├─ Sudo / Privilege Escalation Watch
-  │ └─ SSH Public Key Authentication Watch
- └─ Alert emails ──► manual correlation by src_ip
+├─ Monitors (Logs type, Static threshold)
+│ ├─ SSH Brute Force Monitor
+│ ├─ Unknown Username Login Attempt
+│ ├─ Successful SSH Login
+│ ├─ Sudo / Privilege Escalation Watch
+│ └─ SSH Public Key Authentication Watch
+└─ Alert emails ──► manual correlation by src_ip
 ```
 
 ---
@@ -38,9 +38,10 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 |---|---|---|---|---|
 | 1 | SSH Brute Force | Failed password count from same src IP exceeds threshold within 5-min window | T1110 | ✅ Live & validated |
 | 2 | Unknown Username Login Attempt | Any `Invalid user` event | T1110.001 | ✅ Live & validated |
-| 3 | Successful SSH Login | Any `Accepted password` event | — | ✅ Live & validated |
+| 3 | Successful SSH Login | Any `Accepted password` event | T1078 | ✅ Live & validated |
 | 4 | Sudo / Privilege Escalation Watch | Watchlist command (useradd/usermod/passwd/etc.) via `sudo`, count > 0 within 5-min window (Critical) | T1548.003 | ✅ Live & validated |
 | 5 | SSH Public Key Authentication Watch | `pubkey_auth_count > 0` within 5-min window (Critical) | T1098.004 | ✅ Live & validated |
+| 6 | Cron Job Persistence Watch | Any `CRON CMD` event matching suspicious commands (authorized_keys, curl, wget, bash -i, /tmp/) within 5-min window (Critical) | T1053.003 | ✅ Live & validated |
 
 ---
 
