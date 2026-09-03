@@ -26,7 +26,8 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 │ ├─ Unknown Username Login Attempt
 │ ├─ Successful SSH Login
 │ ├─ Sudo / Privilege Escalation Watch
-│ └─ SSH Public Key Authentication Watch
+│ ├─ SSH Public Key Authentication Watch
+│ └─ Cron Job Persistence Watch
 └─ Alert emails ──► manual correlation by src_ip
 ```
 
@@ -94,7 +95,7 @@ Logs from `/var/log/auth.log` and `/var/log/syslog` are shipped via the Sumo Log
 
 ## 🎯 Roadmap
 
-- [ ] Finish Sudo/Privilege Escalation Watch monitor
+- [ ] Add file-integrity monitoring (FIM) as a complement to cron-based persistence detection
 - [ ] Explore Cloud SIEM tier access
 - [ ] Continue toward Sumo Logic certification
 
